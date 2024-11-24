@@ -48,8 +48,7 @@ def main_module_bot_function(bot):
     в словарь при помощи функции process_birthday"""
     @bot.message_handler(commands=["add_birthday"])
     def add_birthday(message):
-        information = bot.reply_to(message, "Send the birthday in this format:\n\n'Name_Surname YYYY-MM-DD'",
-                           parse_mode="Markdown")
+        information = bot.reply_to(message, "Send the birthday in this format:\n\n'Name_Surname YYYY-MM-DD'")
         bot.register_next_step_handler(information, add_birthday_to_dictionary_birthdays)
 
     """функция, добавляющая день рождения в словарь birthday"""
